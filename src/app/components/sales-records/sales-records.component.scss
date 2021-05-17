@@ -1,0 +1,47 @@
+.search-section {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100%;
+
+  &__input {
+    max-width: 50%;
+  }
+}
+
+.table {
+  background: #fff;
+  th {
+    display: table-cell;
+    vertical-align: middle!important;
+    cursor: pointer;
+
+    p {
+      display: inline-flex;
+      margin: 0px;
+    }
+
+    &:last-child {
+      cursor: default;
+    }
+  }
+
+  td:last-child span{
+    cursor: pointer;
+  }
+
+  .subheader {
+    display: block!important;
+    width: 100%!important;
+
+    tr {
+      display: block!important;
+      width: 100%!important;
+    }
+
+    th {
+      display: inline-block;
+      width: 25%;
+      padding: 0;
+    }
+  }
+}

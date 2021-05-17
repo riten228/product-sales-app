@@ -1,0 +1,62 @@
+<p-card class="p-col-12 p-md-4 p-offset-4 mt-3 mb-2">
+
+  <ng-template pTemplate="header">
+    <h4 class="card-header">Add New Product details</h4>
+  </ng-template>
+
+  <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+
+    <p-messages [(value)]="messages" [enableService]="false"></p-messages>
+
+    <div class="p-field mb-2">
+      <label for="id">Product Id*</label>
+      <div>
+        <input type="text" pInputText id="id" pInputText formControlName="id" aria-describedby="productId-help"
+          class="p-invalid" pTooltip="Length cannoot be more than 13." tooltipPosition="right" />
+        <div id="productId-help" *ngIf="!newProductForm.get('id').valid && newProductForm.get('id').touched"
+          class="p-invalid p-error mb-2">
+          ProductID cannot be left blank or content length not more than 13 letters.
+        </div>
+      </div>
+    </div>
+
+    <div class="p-field mb-2">
+      <label for="name">Product Name*</label>
+      <div>
+        <input type="text" pInputText id="name" pInputText formControlName="name" aria-describedby="productName-help"
+          class="p-invalid" pTooltip="Length cannoot be more than 50." tooltipPosition="right" />
+        <div id="productName-help" *ngIf="!newProductForm.get('name').valid && newProductForm.get('name').touched"
+          class="p-invalid p-error mb-2">Product Name cannot be left blank or content length not more than 50 letters.
+        </div>
+      </div>
+    </div>
+
+    <div class="p-field mb-2">
+      <label for="manager">Product manager</label>
+      <div>
+        <input type="text" pInputText id="manager" pInputText formControlName="manager"
+          aria-describedby="productManager-help" pTooltip="Length cannoot be more than 30." tooltipPosition="right" />
+        <div id="productManager-help"
+          *ngIf="!newProductForm.get('manager').valid && newProductForm.get('manager').touched"
+          class="p-invalid p-error mb-2">Product Manager content length should not be more than 30 letters.
+        </div>
+      </div>
+    </div>
+
+    <div class="p-field mb-3">
+      <label for="startdate">Sales start date*</label>
+      <div>
+        <p-calendar id="startdate" formControlName="startdate" dateFormat="dd.mm.yy" [showIcon]="true">
+        </p-calendar>
+      </div>
+      <div *ngIf="!newProductForm.get('startdate').valid && newProductForm.get('startdate').touched"
+        class="p-invalid p-error mb-2">This field cannot be left blank.
+      </div>
+    </div>
+
+    <div class="btn-group" role="group">
+      <p-button icon="pi pi-check" class="mr-3" type="submit" label="Save" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-times" (click)="resetForm()" label="Reset"></p-button>
+    </div>
+  </form>
+</p-card>

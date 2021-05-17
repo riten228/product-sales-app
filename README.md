@@ -1,29 +1,39 @@
-# README #
+# ProductSalesApp
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
-### What is this repository for? ###
+This project is created to demonstrate the use of PrimeNG library and Bootstrap using Angular 12.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Development server
 
-### How do I get set up? ###
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Run `npm run refresh` in order to delete node_modules and run clean install of all NPM packages and start the dev server.
 
-### Contribution guidelines ###
+## Code scaffolding
 
-* Writing tests
-* Code review
-* Other guidelines
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Who do I talk to? ###
+## Build
 
-* Repo owner or admin
-* Other community or team contact
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+
+## Running Lint on project
+
+Run `npm run lint` to execute the lint on codebase.
+
+## Running Lint and fixing lint errors on project
+
+Run `npm run lint-fix`
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

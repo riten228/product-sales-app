@@ -1,0 +1,39 @@
+<div class="p-col-12 p-md-4 p-offset-4 mt-3 mb-2">
+  <p-messages [(value)]="messageInfo" [enableService]="false"></p-messages>
+
+  <p-card class="p-col-12 p-md-4 p-offset-4 mt-3 mb-2">
+
+    <ng-template pTemplate="header">
+      <h4 class="card-header">Test User Login</h4>
+    </ng-template>
+
+    <p-messages [(value)]="messages" [enableService]="false"></p-messages>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="p-field mb-2">
+        <label for="name">Username*</label>
+        <div>
+          <input type="text" pInputText id="name" pInputText formControlName="username" aria-describedby="userName-help"
+            class="p-invalid" pTooltip="Enter your username" tooltipPosition="right" />
+          <div id="userName-help" *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched"
+            class="p-invalid p-error mb-2">Username cannot be left blank.
+          </div>
+        </div>
+      </div>
+      <div class="p-field mb-2">
+        <label for="password">Password*</label>
+        <div>
+          <input type="text" pInputText id="password" pInputText formControlName="password"
+            aria-describedby="password-help" class="p-invalid" pTooltip="Enter your password" tooltipPosition="right" />
+          <div id="password-help" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"
+            class="p-invalid p-error mb-2">Password cannot be left blank.
+          </div>
+        </div>
+      </div>
+      <button [disabled]="loading" pButton pRipple class="Button">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Login
+      </button>
+    </form>
+  </p-card>
+</div>
